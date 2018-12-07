@@ -1,0 +1,3 @@
+{"db_config": {"host": "localhost", "port": 27017}, "app_config": {"host": "localhost", "port": 8080 },
+ "log_config": {"filepath": "log_in.log", "level": 0}
+}

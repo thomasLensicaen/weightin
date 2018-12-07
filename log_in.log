@@ -1,0 +1,117 @@
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:08:14] "[32mGET / HTTP/1.1[0m" 302 -
+127.0.0.1 - - [07/Dec/2018 17:08:14] "[33mGET /static/index.html HTTP/1.1[0m" 404 -
+127.0.0.1 - - [07/Dec/2018 17:08:35] "[1m[31mGET /add_data HTTP/1.1[0m" 405 -
+127.0.0.1 - - [07/Dec/2018 17:08:42] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:09:56] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+127.0.0.1 - - [07/Dec/2018 17:10:30] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:11:16] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:11:42] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:13:24] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:20:27] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:21:32] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:22:27] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:22:42] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:27:49] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:28:19] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:29:12] "[1m[35mPOST /add_data HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:38:08] "[1m[35mPOST /add_data?a= HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:45:27] "[1m[35mPOST /add_data?a= HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:46:51] "[1m[35mPOST /add_data?a= HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 17:47:13] "[1m[35mPOST /add_data?a= HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 18:02:50] "[37mPOST /add_data?a= HTTP/1.1[0m" 200 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 18:12:30] "[1m[35mPOST /add_data?a= HTTP/1.1[0m" 500 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 18:13:45] "[37mPOST /add_data?a= HTTP/1.1[0m" 200 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 18:14:09] "[37mPOST /add_data?a= HTTP/1.1[0m" 200 -
+ * Running on http://localhost:8080/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 322-400-886
+127.0.0.1 - - [07/Dec/2018 18:15:27] "[37mPOST /add_data?a= HTTP/1.1[0m" 200 -
