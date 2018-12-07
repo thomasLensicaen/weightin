@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+
+<h1>Weight In</h1>
+<script type="text/javascript">
+function httpPost(theUrl, content)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "POST", theUrl, false ); // false for synchronous request
+    xmlHttp.send(content);
+    return xmlHttp.responseText;
+}
+
+function getData()
+{
+	return httpPost("http://localhost:8080/get_data",{"application_name": "weightin"})
+}
+
+function displayData()
+{
+	console.log("Retrieving data")
+	table = document.getElementById("table");
+	var data = getData()
+	console.log(data)
+	for(var i=0; i<data.length; i++)
+	{
+		var newRow = table.insertRow(data[i].length);
+		for(var j=0; j=data[i].length; j++){
+			var cell = newRow.insertCell(j);
+			cell.innerHTML = data[i][j];
+		}
+
+	}
+}
+</script>
+
+
+<p>This is a paragraph.</p>
+<div></div>
+ <table id="table" border="1">
+	 <tr>
+		<th> Date </th>
+		<th> Weight </th>
+	</tr>
+ </table>
+<button type="button" onclick="displayData()">Retrieve Data</button>
+</body>
+</html>

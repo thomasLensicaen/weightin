@@ -30,7 +30,15 @@ def add_data():
     application = apps_map[application_name]
     obj = application.to_object(obj)
     res = application.add_data(obj)
-    return "OK {}".format(res)
+    return res 
+
+@app.route("/get_data", methods=["POST"])
+def get_data():
+    result = request.form
+    application_name = result['application_name']
+    application = apps_map[application_name]
+    obj = application.get_data()
+    return str(obj) 
 
 @app.route("/get_plot", methods=["POST"])
 def get_plot():
@@ -38,14 +46,25 @@ def get_plot():
     application_name = result['application_name']
     application = apps_map[application_name]
     obj = request.args.get('obj')
-    return ""
+    return res 
 
 @app.route("/delete_data", methods=["POST"])
 def delete_data():
     result = request.form
     application_name = result['application_name']
+    obj = get_obj_from_form(result)
     application = apps_map[application_name]
-    obj = request.args.get('obj')
+    obj = application.to_object(obj)
+    res = application.delete_data(obj)
+    return res 
+
+@app.route("/delete_by_date", methods=["POST"])
+def delete_by_date():
+    result = request.form
+    application_name = result['application_name']
+    obj = get_obj_from_form(result)
+    application = apps_map[application_name]
+    res = application.delete_by_date(obj)
     return ""
 
 if __name__ == '__main__':

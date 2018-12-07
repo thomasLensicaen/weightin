@@ -7,8 +7,10 @@ import pymongo
 from config import DbConfig
 from .app import AppBase
 import re
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-from typing import Dict
+from typing import Dict, List
 
 FORMAT_DATE="%Y-%m-%d"
 FORMAT_DATEHOUR="%Y-%m-%d %H"
@@ -34,6 +36,8 @@ class WeightInApp(AppBase):
 
     @staticmethod
     def from_str_to_date(sdate):
+        if isinstance(sdate,datetime):
+            return sdate
         if re.match(RE_FORMAT_DATE,sdate):
             return datetime.strptime(sdate,FORMAT_DATE)
         elif re.match(RE_FORMAT_DATEHOUR,sdate):
@@ -45,8 +49,6 @@ class WeightInApp(AppBase):
         else:
             raise Exception("Unkwon date format for {}".format(sdate))
 
-
-
     def __init__(self, dbconfig: DbConfig):
         super().__init__(dbconfig)
 
@@ -55,12 +57,24 @@ class WeightInApp(AppBase):
         if isinstance(weightin.date,str):
             weightin.date = self.from_str_to_date(weightin.date) 
         w = weightin.to_dict()
-        print(w)
         res = self.collections[self.weight_collection].insert_one(w)
-        print(res)
 
     def delete_data(self, weightin: WeightIn):
-        print(weightin)
+        self.collections[self.weight_collection].remove(weightin.to_dict())
+
+    def get_plot(self):
+        data = pd.DataFrame([obj for obj in self.collections[self.weight_collection].find()])
+        fig = sns.plot(x="date",y="weight",data=data)
+        return fig
+
+    def get_data(self):
+        data = [obj for obj in self.collections[self.weight_collection].find()]
+        return data
+
+    def delete_by_date(self, date_list: List[datetime]):
+        self.collections[self.weight_collection].remove({
+            "date": list(map(from_str_date,date_list)) 
+           })
 
     @staticmethod
     def to_object(dictlike: Dict): 
