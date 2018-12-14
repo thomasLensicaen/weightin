@@ -6,6 +6,7 @@ import pathlib
 from config import Config
 from apps.weightin import WeightInApp
 from common.logtool import create_logger
+from common.constant import data_post_field
 import copy
 
 app = Flask(__name__)
@@ -13,9 +14,7 @@ app = Flask(__name__)
 apps_map = None
 
 def get_obj_from_form(result):
-    raw = dict(copy.deepcopy(result))
-    del raw['application_name']
-    return raw
+    return result[data_post_field] 
 
 
 @app.route("/")
@@ -37,8 +36,8 @@ def get_data():
     result = request.form
     application_name = result['application_name']
     application = apps_map[application_name]
-    obj = application.get_data()
-    return str(obj) 
+    res = application.get_data()
+    return res
 
 @app.route("/get_plot", methods=["POST"])
 def get_plot():
@@ -52,7 +51,7 @@ def get_plot():
 def delete_data():
     result = request.form
     application_name = result['application_name']
-    obj = get_obj_from_form(result)
+    obj = json.loads(get_obj_from_form(result))
     application = apps_map[application_name]
     obj = application.to_object(obj)
     res = application.delete_data(obj)
@@ -65,7 +64,7 @@ def delete_by_date():
     obj = get_obj_from_form(result)
     application = apps_map[application_name]
     res = application.delete_by_date(obj)
-    return ""
+    return res 
 
 if __name__ == '__main__':
     config_path = sys.argv[1]

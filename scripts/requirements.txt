@@ -1,0 +1,9 @@
+flask
+pymongo
+dataclasses
+dataclasses-json
+dataclasses-dict
+pandas
+matplotlib
+seaborn
+requests

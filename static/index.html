@@ -7,6 +7,8 @@
 
 <h1>Weight In</h1>
 <script type="text/javascript">
+var host="localhost"
+var post="5000"
 function httpPost(theUrl, content)
 {
     var xmlHttp = new XMLHttpRequest();
@@ -17,7 +19,7 @@ function httpPost(theUrl, content)
 
 function getData()
 {
-	return httpPost("http://localhost:8080/get_data",{"application_name": "weightin"})
+	return httpPost(,{"application_name": "weightin"})
 }
 
 function displayData()
