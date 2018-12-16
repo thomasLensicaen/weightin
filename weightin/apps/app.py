@@ -1,7 +1,7 @@
 import pymongo
-from config import DbConfig
+from weightin.config import DbConfig
 import logging
-from common.logtool import log_debug, create_logger 
+from weightin.common.logtool import log_debug, create_logger
 
 class AppBase:
     db_name = "appbase"

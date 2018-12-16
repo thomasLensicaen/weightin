@@ -3,10 +3,10 @@ import os
 import sys
 from werkzeug.utils import secure_filename
 import pathlib
-from config import Config
-from apps.weightin import WeightInApp
-from common.logtool import create_logger
-from common.constant import data_post_field
+from weightin.config import Config
+from weightin.apps.weightin import WeightInApp
+from weightin.common.logtool import create_logger
+from weightin.common.constant import data_post_field
 import copy
 
 app = Flask(__name__)
@@ -29,7 +29,10 @@ def add_data():
     application = apps_map[application_name]
     obj = application.to_object(obj)
     res = application.add_data(obj)
-    return res 
+    if res.acknowledged:
+        return "OK"
+    else:
+        return "NO"
 
 @app.route("/get_data", methods=["POST"])
 def get_data():
@@ -37,7 +40,7 @@ def get_data():
     application_name = result['application_name']
     application = apps_map[application_name]
     res = application.get_data()
-    return res
+    return {'data': res}
 
 @app.route("/get_plot", methods=["POST"])
 def get_plot():

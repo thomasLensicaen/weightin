@@ -2,16 +2,17 @@ import unittest
 from tests.helper import WIClient
 from datetime import datetime, timedelta
 import random
+from weightin.apps.weightin import FORMAT_DATE
 
 class WeightInTest(unittest.TestCase):
 
     def setUp(self):
-        self.wi_client = WIClient('localhost',5000) 
+        self.wi_client = WIClient('localhost',8080) 
 
     def test_add_weight(self):
         results = list()
         for i in range(1,20):
-            obj = {'date' : datetime(2019,1,1) + timedelta(days=i),
+            obj = {'date' : (datetime(2019,1,1) + timedelta(days=i)).strftime(FORMAT_DATE),
                    'weight' : 80 + random.random() * 4}
             res = self.wi_client.request_add_weight(obj)
             results.append(res)
@@ -19,12 +20,8 @@ class WeightInTest(unittest.TestCase):
 
 
     def test_get_data(self):
-        for i in range(1,20):
-            obj = {'date' : datetime(2019,1,1) + timedelta(days=i),
-                   'weight' : 80 + random.random() * 4}
-            self.wi_client.request_add_weight(obj)
         data = self.wi_client.request_get_data()
-        print(data)
+        print("{}".format(data))
 
 
 

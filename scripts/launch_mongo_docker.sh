@@ -8,4 +8,7 @@ then
 	echo "bitch"
 fi
 
+container_id_old=`docker ps -a | grep mongodb:latest |awk -F" " '{print $1}'`
+docker rm $container_id_old
+
 docker run -d --name devtest --mount source=${VOLUME},target=/app mongodb:latest

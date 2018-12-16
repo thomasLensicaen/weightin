@@ -4,11 +4,12 @@ from dataclasses_dict import DataclassDictMixin
 from dataclasses_json import DataClassJsonMixin
 from datetime import datetime
 import pymongo
-from config import DbConfig
+from weightin.config import DbConfig
 from .app import AppBase
 import re
 import matplotlib.pyplot as plt
 import seaborn as sns
+import json
 
 from typing import Dict, List
 
@@ -58,6 +59,7 @@ class WeightInApp(AppBase):
             weightin.date = self.from_str_to_date(weightin.date) 
         w = weightin.to_dict()
         res = self.collections[self.weight_collection].insert_one(w)
+        return res
 
     def delete_data(self, weightin: WeightIn):
         self.collections[self.weight_collection].remove(weightin.to_dict())
@@ -73,11 +75,11 @@ class WeightInApp(AppBase):
 
     def delete_by_date(self, date_list: List[datetime]):
         self.collections[self.weight_collection].remove({
-            "date": list(map(from_str_date,date_list)) 
+            "date": list(map(self.from_str_date,date_list))
            })
 
     @staticmethod
-    def to_object(dictlike: Dict): 
-        return WeightIn.from_dict(dictlike)
+    def to_object(dictlike: str):
+        return WeightIn.from_dict(json.loads(dictlike))
 
 
