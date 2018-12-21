@@ -9,6 +9,9 @@ then
 fi
 
 container_id_old=`docker ps -a | grep mongodb:latest |awk -F" " '{print $1}'`
+if [ ! -z "$container_id_old" ]
+then
 docker rm $container_id_old
+fi
 
 docker run -d --name devtest --mount source=${VOLUME},target=/app mongodb:latest

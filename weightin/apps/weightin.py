@@ -5,7 +5,8 @@ from dataclasses_json import DataClassJsonMixin
 from datetime import datetime
 import pymongo
 from weightin.config import DbConfig
-from .app import AppBase
+from weightin.common.mongo_helper import mongo_result_to_json
+from weightin.app import AppBase
 import re
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -22,6 +23,7 @@ RE_FORMAT_DATE="\d{4}\-\d{2}\-\d{2}"
 RE_FORMAT_DATEHOUR="\d{4}\-\d{2}\-\d{2}\b\d{2}"
 RE_FORMAT_DATETIME="\d{4}\-\d{2}\-\d{2}\b\d{2}:\d{2}:\d{2}"
 RE_FORMAT_DATETIME_STANDARD="\d{4}\-\d{2}\-\d{2}T\d{2}:\d{2}:\d{2}"
+
 
 @dataclass
 class WeightIn(DataClassJsonMixin,DataclassDictMixin):
@@ -64,6 +66,9 @@ class WeightInApp(AppBase):
     def delete_data(self, weightin: WeightIn):
         self.collections[self.weight_collection].remove(weightin.to_dict())
 
+    def update_data(self, weightin: WeightIn):
+        pass
+
     def get_plot(self):
         data = pd.DataFrame([obj for obj in self.collections[self.weight_collection].find()])
         fig = sns.plot(x="date",y="weight",data=data)
@@ -71,7 +76,7 @@ class WeightInApp(AppBase):
 
     def get_data(self):
         data = [obj for obj in self.collections[self.weight_collection].find()]
-        return data
+        return mongo_result_to_json(data)
 
     def delete_by_date(self, date_list: List[datetime]):
         self.collections[self.weight_collection].remove({

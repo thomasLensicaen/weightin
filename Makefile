@@ -1,7 +1,8 @@
-env:
-	sh scripts/create_venv.sh
 run:
 	sh scripts/run_server.sh
+
+env:
+	sh scripts/create_venv.sh
 
 test:
 	sh scripts/run_test.sh

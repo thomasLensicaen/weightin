@@ -3,11 +3,15 @@ import os
 import sys
 from werkzeug.utils import secure_filename
 import pathlib
-from weightin.config import Config
-from weightin.apps.weightin import WeightInApp
-from weightin.common.logtool import create_logger
-from weightin.common.constant import data_post_field
+from config import Config
+from apps.weightin import WeightInApp
+from common.logtool import create_logger
+from common.constant import data_post_field
 import copy
+import pathlib
+
+#local_dir=pathlib.Path(__file__).resolve() / '..'
+#sys.path.append(local_dir)
 
 app = Flask(__name__)
 
